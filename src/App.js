@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
+import Base from './Base';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ListGames from './ListGames';
+import AddGames from './AddGames';
+
+class App extends Component {
+
+  state = {
+    games: []
+  }
+
+  componentDidMount() {
+    this.ref = Base.syncState('games', {
+      context: this,
+      state: 'games',
+      asArray: true
+    });
+  }
+
+handleShelfUpdate = (event, game) => {
+  const shelf = event.target.value;
+  let newGames = [];
+
+  game.shelf === 'none' ? newGames = [...this.state.games, game] : newGames = [...this.state.games] ;
+  game.shelf = shelf;
+  //newGames = [...this.state.games, game];
+  this.setState({ games : newGames })
+}
+
+  render() {
+    return (
+      <div className="App">
+      <Route exact path="/" render={() => (
+        <ListGames games={this.state.games} handleSelectChange={this.handleShelfUpdate} />
+      )} />
+      <Route exact path="/search" render={() => (
+        <AddGames shelfGames={this.state.games} handleSelectChange={this.handleShelfUpdate} />
+      )} />
+      </div>
+    );
+  }
 }
 
 export default App;

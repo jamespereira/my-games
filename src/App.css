@@ -1,38 +1,234 @@
-.App {
+html,
+body,
+.root {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+}
+
+body,
+.app {
+  background: white;
+}
+
+/* main page */
+
+.list-games-title {
+  padding: 10px 0;
+  background: #fff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-games-title h1 {
+  font-weight: 400;
+  margin: 0;
+  color: #0072ce;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.list-games-content {
+  /*padding: 0 0 80px;*/
+  flex: 1;
+}
+
+.gameshelf {
+  padding: 0 10px 20px;
+  background: #eee;
+}
+
+.gameshelf:nth-child(even) {
+  background: #fff;
+}
+
+@media (min-width: 600px) {
+  .gameshelf {
+    padding: 0 20px 40px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gameshelf-title {
+  /*border-bottom: 1px solid #dedede; */
+  text-align: center;
+  color: rgb(0, 114, 206);
+  margin: 0px;
+  padding: 20px 0;
+  font-weight: 400;
+}
+
+.gameshelf-games {
+  text-align: center;
+}
+
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}
+
+.open-search button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0072ce;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 0;
+  outline: 0;
+}
+
+.open-search button:hover {
+  background-color: #003e70
+}
+
+/* search page */
+
+.search-games-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
+}
+
+.search-games-input-wrapper {
+  flex: 1;
+  background: #e9e;
+}
+
+.search-games-bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+}
+
+.close-search {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 50px;
+  height: 53px;
+  background-image: url('./icons/arrow-back.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+  border: none;
+  outline: none;
+}
+
+button:active {
+  border: red;
+  outline: none;
+}
+
+.search-games-results {
+  padding: 80px 10px 20px;
+}
+
+/* games grid */
+
+.games-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.games-grid li {
+  padding: 10px 15px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game {
+  width: 140px;
+}
+
+.game-title,
+.game-authors,
+.game-released {
+  font-size: 0.8em;
+}
+
+.game-title {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.game-released {
+  color: #999;
+}
+
+.game-authors {
+  color: #999;
+}
+
+.game-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.game-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #006FCD;
+  background-image: url('./icons/arrow-drop-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.game-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* game cover */
+
+.game-cover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: #eee;
+}
+
+.game-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.game-rating {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal !important;
+  font-weight: bold !important;
+  background-color: transparent;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  font-size: 17px;
+  border-radius: 6px;
 }
