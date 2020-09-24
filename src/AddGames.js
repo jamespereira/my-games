@@ -25,7 +25,6 @@ class AddGames extends Component {
                 })
             }
             games.map(game => game.shelf = 'none')
-
             newGames = [...this.props.shelfGames, ...games];
 
             this.setState({ allGames: newGames })

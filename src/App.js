@@ -26,7 +26,7 @@ handleShelfUpdate = (event, game) => {
 
   game.shelf === 'none' ? newGames = [...this.state.games, game] : newGames = [...this.state.games] ;
   game.shelf = shelf;
-  //newGames = [...this.state.games, game];
+  
   this.setState({ games : newGames })
 }
 
