@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my-games/static/css/main.4b29d48d.chunk.css",
+    "main.js": "/my-games/static/js/main.7366468b.chunk.js",
+    "main.js.map": "/my-games/static/js/main.7366468b.chunk.js.map",
+    "runtime-main.js": "/my-games/static/js/runtime-main.80907682.js",
+    "runtime-main.js.map": "/my-games/static/js/runtime-main.80907682.js.map",
+    "static/js/2.b3ed339f.chunk.js": "/my-games/static/js/2.b3ed339f.chunk.js",
+    "static/js/2.b3ed339f.chunk.js.map": "/my-games/static/js/2.b3ed339f.chunk.js.map",
+    "index.html": "/my-games/index.html",
+    "precache-manifest.28b6f68aebc2c3ca2412de4fcbc1eded.js": "/my-games/precache-manifest.28b6f68aebc2c3ca2412de4fcbc1eded.js",
+    "service-worker.js": "/my-games/service-worker.js",
+    "static/css/main.4b29d48d.chunk.css.map": "/my-games/static/css/main.4b29d48d.chunk.css.map",
+    "static/js/2.b3ed339f.chunk.js.LICENSE.txt": "/my-games/static/js/2.b3ed339f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/my-games/static/media/arrow-drop-down.78c6f53b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80907682.js",
+    "static/js/2.b3ed339f.chunk.js",
+    "static/css/main.4b29d48d.chunk.css",
+    "static/js/main.7366468b.chunk.js"
+  ]
+}
