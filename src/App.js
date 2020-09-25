@@ -26,17 +26,17 @@ handleShelfUpdate = (event, game) => {
 
   game.shelf === 'none' ? newGames = [...this.state.games, game] : newGames = [...this.state.games] ;
   game.shelf = shelf;
-  
+
   this.setState({ games : newGames })
 }
 
   render() {
     return (
       <div className="App">
-      <Route exact path="/" render={() => (
+      <Route exact path="/my-games/" render={() => (
         <ListGames games={this.state.games} handleSelectChange={this.handleShelfUpdate} />
       )} />
-      <Route exact path="/search" render={() => (
+      <Route exact path="/my-games/search" render={() => (
         <AddGames shelfGames={this.state.games} handleSelectChange={this.handleShelfUpdate} />
       )} />
       </div>
